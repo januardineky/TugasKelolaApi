@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="{{ asset('js/datatables.min1 (1).js') }}"></script>
     <style>
         body {
             transition: margin-left 0.3s; /* Smooth transition for body */
@@ -59,6 +58,7 @@
     </style>
 </head>
 <body>
+    @include('sweetalert::alert')
     <nav class="navbar navbar-expand-lg navbar-custom container-fluid">
         <div class="container-fluid">
             <span class="open-btn" onclick="toggleSidebar()">&#9776;</span>

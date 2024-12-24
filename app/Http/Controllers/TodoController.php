@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Exception\RequestException;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-
+use RealRashid\SweetAlert\Facades\Alert;
+use RealRashid\SweetAlert\Toaster;
 
 class TodoController extends Controller
 {
@@ -70,7 +71,9 @@ class TodoController extends Controller
 
             // Periksa jika respons menunjukkan kesuksesan
             if (isset($data['type']) && $data['type'] === 'success') {
-                return redirect('/')->with('success', $data['message'] ?? 'Todo added successfully!');
+                toast('Data Saved Successfullly','success');
+                return redirect('/');
+                // return redirect('/')->with('success', $data['message'] ?? 'Todo added successfully!');
             } else {
                 return redirect('/')->with('error', 'Failed to add todo. Server error.');
             }
@@ -107,7 +110,9 @@ class TodoController extends Controller
             ]);
 
             if ($response->successful()) {
-                return redirect()->back()->with('success', 'Data updated successfully');
+                toast('Data Updated Successfullly','success');
+                return redirect('/');
+                // return redirect()->back()->with('success', 'Data updated successfully');
             } else {
                 return redirect()->back()->with('error', 'API Error: ' . $response->body());
             }
@@ -138,7 +143,9 @@ class TodoController extends Controller
 
             if ($response->getStatusCode() == 200) {
                 if (isset($body['type']) && $body['type'] == 'success') {
-                    return redirect()->back()->with('success', 'Data deleted successfully');
+                    toast('Data Deleted Successfullly','success');
+                    return redirect('/');
+                    // return redirect()->back()->with('success', 'Data deleted successfully');
                 }
 
                 // Log and return the error if the 'type' field is not 'success'

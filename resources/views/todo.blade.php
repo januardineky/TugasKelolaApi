@@ -2,7 +2,6 @@
 
 @section('content')
 
-    <!-- Flash Messages with SweetAlert -->
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -16,7 +15,7 @@
     @endif
 
     <!-- Button to Open Add Todo Modal -->
-    <div class="mb-3">
+    <div class="mb-3 ms-2">
         <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addTodoModal">Add New List</button>
     </div>
 
