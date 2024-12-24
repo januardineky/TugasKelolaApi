@@ -30,10 +30,10 @@ class TodoController extends Controller
             $payload = [
                 'todos' => [
                     [
-                        'id' => 456,
+                        'id' => rand(1000, 9999),
                         'todo' => $request->input('todo'),
                         'completed' => filter_var($request->input('completed'), FILTER_VALIDATE_BOOLEAN),
-                        'userId' => 1,
+                        'userId' => rand(1, 100),
                     ],
                 ],
             ];
@@ -107,7 +107,7 @@ class TodoController extends Controller
             ]);
 
             if ($response->successful()) {
-                return redirect()->back()->with('success', 'Todo updated successfully');
+                return redirect()->back()->with('success', 'Data updated successfully');
             } else {
                 return redirect()->back()->with('error', 'API Error: ' . $response->body());
             }
