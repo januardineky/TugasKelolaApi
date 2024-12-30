@@ -62,7 +62,6 @@
 #main-content {
     padding-bottom: 60px; /* Ensure space between table and footer */
 }
-
     </style>
 </head>
 <body>
@@ -87,7 +86,7 @@
 
     <!-- Footer Section -->
     <footer style="bottom: 0; position: fixed">
-        <div class="container">
+        <div class="container text-center">
             <p class="m-0">© 2024 TODO App. All rights reserved.</p>
         </div>
     </footer>
