@@ -55,6 +55,14 @@
             width: 100%;
             bottom: 0;
         }
+        #todoTable_wrapper {
+    margin-bottom: 50px; /* Add space below the table */
+}
+
+#main-content {
+    padding-bottom: 60px; /* Ensure space between table and footer */
+}
+
     </style>
 </head>
 <body>
